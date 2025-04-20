@@ -20,15 +20,12 @@ Com o tempo, tanto a interface do ChatGPT quanto a forma de integração com a A
 
 ### Backend:
 - Node.js
-- Express
 - JavaScript
-- dotenv
-- cors
 
 ### Frontend:
 - React
 - JavaScript
-- CSS (ou outro estilo utilizado)
+- CSS
 
 ---
 
@@ -37,8 +34,8 @@ Com o tempo, tanto a interface do ChatGPT quanto a forma de integração com a A
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/cstavaresj/node-react-chatgpt-clone.git
+cd node-react-chatgpt-clone
 ```
 
 ### 2. Configurar o backend
@@ -82,7 +79,6 @@ O frontend será iniciado em: `http://localhost:3000`
 
 - Interface de chat inspirada na versão mais recente do ChatGPT
 - Envio de mensagens e retorno de respostas usando a API da OpenAI
-- Histórico de conversa (manutenção local)
 - Layout adaptado para refletir a experiência real de uso
 
 ---
