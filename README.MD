@@ -1,94 +1,101 @@
-<p align="center">
-  <img src="https://imgur.com/npkT3Tw.png" width="350" alt="ChatGPT Clone">
-</p>
+# ChatGPT Clone • Fullstack com React e Node.js
 
-<h2 align="center">
-  ChatGPT Clone • 🤖
-</h2>
+Este projeto é um clone funcional da interface do ChatGPT, desenvolvido com **React no frontend** e **Node.js no backend**, utilizando a **API da OpenAI** para comunicação com o modelo de linguagem.  
 
-<p align="center">
-  Projeto Fullstack que integra a API da OpenAI em uma interface inspirada no ChatGPT.<br>
-  Desenvolvido como parte da <a href="https://web.dio.me/track/formacao-chatgpt-devs" target="_blank">Formação ChatGPT for Devs</a> da DIO, ministrada por Felipe Silva Aguiar.
-</p>
+O projeto foi criado como parte da formação [ChatGPT for Devs](https://web.dio.me/track/formacao-chatgpt-devs) da DIO, com aulas do professor **Felipe Silva Aguiar**.
 
 ---
 
-## 🧠 Sobre o projeto
+## ✨ Sobre o projeto
 
-Este é um clone fullstack do ChatGPT, que utiliza a API da OpenAI para criar uma experiência de chat baseada em inteligência artificial. A aplicação é composta por um backend em **Node.js** e um frontend em **React**, com uma interface inspirada na versão mais recente do ChatGPT.
+Com o tempo, tanto a interface do ChatGPT quanto a forma de integração com a API da OpenAI passaram por diversas mudanças. Este projeto foi adaptado para refletir essas atualizações:
 
-Ao longo do tempo, tanto a interface quanto a forma de implementar a API da OpenAI passaram por mudanças significativas. Para acompanhar essas mudanças, **foram feitas adaptações importantes na interface e no código**, tornando o projeto mais fiel ao visual atual do ChatGPT e compatível com a versão atual da API.
+- A interface foi ajustada para se aproximar da aparência atual do ChatGPT.
+- O backend foi atualizado para funcionar com as versões recentes da API da OpenAI.
+- Todo o fluxo de mensagens e respostas foi modernizado para acompanhar a experiência do chat real.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 🧪 Tecnologias utilizadas
 
-### Backend
+### Backend:
 - Node.js
 - Express
 - JavaScript
-- Cors
-- Dotenv
+- dotenv
+- cors
 
-### Frontend
+### Frontend:
 - React
 - JavaScript
-- CSS (ou framework utilizado, se houver)
+- CSS (ou outro estilo utilizado)
 
 ---
 
-## 🛠 Como executar o projeto
+## ▶️ Como executar o projeto
 
-### 🔧 Backend
+### 1. Clonar o repositório
 
 ```bash
-# Acesse a pasta do servidor
-cd server
-
-# Instale as dependências
-npm install
-
-# Inicie o servidor
-npm start
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ```
 
-O servidor estará rodando em: `http://localhost:5000`
+### 2. Configurar o backend
 
-⚠️ **Importante:** você precisa de uma chave de API da OpenAI. Crie um arquivo `.env` na raiz da pasta `server` com o seguinte conteúdo:
+```bash
+cd server
+npm install
+```
+
+Crie um arquivo `.env` com sua chave da API da OpenAI:
 
 ```env
 OPENAI_API_KEY=sua-chave-aqui
 ```
 
----
-
-### 💻 Frontend
+Inicie o servidor:
 
 ```bash
-# Acesse a pasta do frontend
-cd web
-
-# Instale as dependências
-npm install
-
-# Inicie o app
 npm start
 ```
 
-A aplicação estará disponível em: `http://localhost:3000`
+O backend estará disponível em: `http://localhost:5000`
 
 ---
 
-## ✨ Funcionalidades
+### 3. Executar o frontend
+
+Abra um novo terminal e execute:
+
+```bash
+cd web
+npm install
+npm start
+```
+
+O frontend será iniciado em: `http://localhost:3000`
+
+---
+
+## 💬 Funcionalidades
 
 - Interface de chat inspirada na versão mais recente do ChatGPT
-- Integração com a API da OpenAI (modelo GPT)
-- Respostas dinâmicas com histórico de mensagens
-- Adaptação para acompanhar mudanças na API oficial
+- Envio de mensagens e retorno de respostas usando a API da OpenAI
+- Histórico de conversa (manutenção local)
+- Layout adaptado para refletir a experiência real de uso
 
 ---
 
 ## 📚 Créditos
 
-Este projeto foi desenvolvido com base no conteúdo da [Formação ChatGPT for Devs](https://web.dio.me/track/formacao-chatgpt-devs), oferecida pela DIO e ministrada pelo professor Felipe Silva Aguiar.  
-Adaptações e melhorias realizadas para manter o projeto atualizado e funcional com as versões mais recentes da API e da interface.
+Este projeto foi desenvolvido durante a [Formação ChatGPT for Devs](https://web.dio.me/track/formacao-chatgpt-devs) da DIO, com o professor **Felipe Silva Aguiar**.
+
+As adaptações foram feitas para manter o projeto atualizado conforme a evolução da interface do ChatGPT e da API da OpenAI.
+
+---
+
+## 📌 Observações
+
+- Para obter uma chave da OpenAI, acesse: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+- Você pode utilizar modelos como `gpt-3.5-turbo` ou `gpt-4`, dependendo do seu plano na OpenAI.
