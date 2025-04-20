@@ -1,25 +1,27 @@
-const { Configuration, OpenAIApi } = require('openai')
-require("dotenv").config()
+const { OpenAI } = require("openai");  // Certifique-se de que a biblioteca que você está usando seja a oficial da OpenAI
+require("dotenv").config();
 
-module.exports = class openai{
+const openai = new OpenAI({
+  apiKey: process.env.OPEN_AI_KEY
+});
 
-	static configuration(){
-		const configuration = new Configuration({
-			apiKey: process.env.OPEN_AI_KEY,
-		})
+module.exports = class OpenAIWrapper {
 
-		return new OpenAIApi(configuration)
-	}
-
-	static textCompletion ({prompt}) {
-    return 	{
-			model:"text-davinci-003",
-			prompt:`${prompt}`,
-			temperature:0,
-			max_tokens: 3500,
-			top_p:1,
-			frequency_penalty: 0.5,
-			presence_penalty: 0
-		}
+  static client() {
+    return openai;
   }
-}
+
+  static textCompletion({ prompt }) {
+    // Certifique-se de usar um modelo válido, por exemplo, 'gpt-4' ou 'gpt-3.5-turbo'
+    return {
+      model: "gpt-4.1-nano",  // Modelo correto e válido
+      messages: [{ role: "user", content: prompt }],
+      temperature: 0.7,  // Ajuste conforme necessário
+      max_tokens: 3500,  // Ajuste conforme necessário
+      top_p: 1,
+      frequency_penalty: 0.5,
+      presence_penalty: 0
+    };
+  }
+
+};

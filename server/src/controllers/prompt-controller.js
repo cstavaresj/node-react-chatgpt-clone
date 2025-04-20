@@ -1,32 +1,27 @@
-const inputPrompt = require("../models/input-prompt")
-const openai = require("../config/openai")
+const OpenAIWrapper = require("../config/openai");
 
-module.exports = {
-	async sendText(req, res){
+async function sendText(req, res) {
+try {
+    const { prompt } = req.body;
 
-		const openaiAPI = openai.configuration()
-		const inputModel = new inputPrompt(req.body)
+    
+    const response = await OpenAIWrapper.client().chat.completions.create(
+		OpenAIWrapper.textCompletion({ prompt })
+    );
 
-		try {
-			const response = await openaiAPI.createCompletion(
-				openai.textCompletion(inputModel)
-			)
+    
+    const chatResponse = response.choices[0].message.content;
 
-			return res.status(200).json({
-				sucess: true,
-				data: response.data.choices[0].text
-			})
-
-		} catch (error) {
-
-			return res.status(400).json({
-				sucess: false,
-				error: error.response
-				? error.response.data
-				: 'There was an inssue on the server'
-			})
-
-		}
+    res.status(200).json({
+		success: true,
+		data: chatResponse
+    });
+    
+	} catch (error) {
+    console.error("Erro ao chamar OpenAI:", error);
+    
+    res.status(500).json({ error: "Erro ao processar o prompt" });
 	}
-
 }
+
+module.exports = { sendText };
